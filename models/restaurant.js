@@ -25,4 +25,4 @@ restaurantSchema.pre('save', function(next) {
   next();
 });
 
-module.exports = mongoose.model('Store', restaurantSchema);
+module.exports = mongoose.model('Restaurant', restaurantSchema);
