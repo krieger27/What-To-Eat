@@ -3,4 +3,3 @@ node_modules/
 .idea
 variables.env
 package-lock.json
-package.json
