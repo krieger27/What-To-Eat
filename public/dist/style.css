@@ -8,7 +8,7 @@ body {
   body:before {
     content: '';
     display: block;
-    background: linear-gradient(90deg, #48ded4 0%, #a026bf 20%, #e82c75 60%, #FFC40E 85%, #48ded4 95%);
+    background: linear-gradient(90deg, #0d0e0d 0%, #2a0e31 20%, #2f101c 60%, rgb(36, 28, 5) 85%, #102524 95%);
     height: 10px;
     width: 100%; }
 
@@ -512,7 +512,7 @@ label {
 .form {
   background: white;
   padding: 2rem;
-  box-shadow: linear-gradient(90deg, #48ded4 0%, #a026bf 20%, #e82c75 60%, #FFC40E 85%, #48ded4 95%); }
+  box-shadow: linear-gradient(90deg, #080808 0%, #383838 20%, #686868 60%, #989898 85%, #F5F5F5 95%); }
   .form + .form {
     margin-top: 4rem; }
   .form h2 {
@@ -643,7 +643,7 @@ label {
     .nav__link:hover, .nav__link--active {
       border-bottom-color: rgba(0, 0, 0, 0.2);
       border-right-color: rgba(0, 0, 0, 0.05);
-      background: linear-gradient(90deg, #48ded4 0%, #a026bf 20%, #e82c75 60%, #FFC40E 85%, #48ded4 95%) fixed; }
+      background: linear-gradient(90deg, #080808 0%, #383838 20%, #686868 60%, #989898 85%, #989898 95%) fixed; }
       .nav__link:hover svg, .nav__link--active svg {
         -ms-transform: scale(1.2);
             transform: scale(1.2); }
@@ -775,7 +775,7 @@ label {
     width: 100%;
     top: 0;
     right: 0;
-    background: linear-gradient(45deg, #05b3d6 0%, rgba(5, 179, 214, 0) 70%), linear-gradient(135deg, #0958ec 10%, rgba(9, 88, 236, 0) 80%), linear-gradient(225deg, #d209ec 10%, rgba(210, 9, 236, 0) 80%), linear-gradient(315deg, #05e129 100%, rgba(5, 225, 41, 0) 70%);
+    background: linear-gradient(45deg, #0a1b1f 0%, rgba(5, 179, 214, 0) 70%), linear-gradient(135deg, #07152e 10%, rgba(9, 88, 236, 0) 80%), linear-gradient(225deg, #470450 10%, rgba(210, 9, 236, 0) 80%), linear-gradient(315deg, #033a0b 100%, rgba(5, 225, 41, 0) 70%);
     opacity: 0.6;
     z-index: 1;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
@@ -865,7 +865,7 @@ label {
     width: 100%;
     top: 0;
     right: 0;
-    background: linear-gradient(45deg, #05b3d6 0%, rgba(5, 179, 214, 0) 70%), linear-gradient(135deg, #0958ec 10%, rgba(9, 88, 236, 0) 80%), linear-gradient(225deg, #d209ec 10%, rgba(210, 9, 236, 0) 80%), linear-gradient(315deg, #05e129 100%, rgba(5, 225, 41, 0) 70%);
+    background: linear-gradient(45deg, #0a1b1f 0%, rgba(5, 179, 214, 0) 70%), linear-gradient(135deg, #07152e 10%, rgba(9, 88, 236, 0) 80%), linear-gradient(225deg, #470450 10%, rgba(210, 9, 236, 0) 80%), linear-gradient(315deg, #033a0b 100%, rgba(5, 225, 41, 0) 70%);
     opacity: 0.6;
     z-index: 1;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2vw), 0% 100%);
