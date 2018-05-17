@@ -2,14 +2,13 @@
   {
     "_id": "58c039938060197ca0b52d4d",
     "slug": "olive-oil",
-    "name": "Olive Oil",
+    "name": "Jack Brown's",
     "description": "Friendly atmosphere. Great selection of local brews. ",
     "author": "58c039018060197ca0b52d4c",
     "photo": "a10ca916-af2a-4a98-96a1-3e320df006f9.jpeg",
     "tags": [
       "Wifi",
       "Open Late",
-      "Vega",
       "Licensed"
     ],
     "created": "2017-03-08T17:04:19.860Z",
@@ -190,7 +189,7 @@
   {
     "_id": "58c05f928060197ca0b52d59",
     "slug": "charred",
-    "name": "Charred",
+    "name": "Edley's",
     "description": "BBQ chicken prepared Portugese style over an open charcoal pit.",
     "author": "58c039018060197ca0b52d4c",
     "photo": "4a5cb791-0140-4fa2-864c-af786640157d.jpeg",
