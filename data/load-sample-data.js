@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 mongoose.connect(process.env.DATABASE);
 mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
 
-// import all of our models - they need to be imported only once
+
 const Restaurant = require('../models/Restaurant');
 const Review = require('../models/Review');
 const User = require('../models/User');
@@ -16,7 +16,7 @@ const reviews = JSON.parse(fs.readFileSync(__dirname + '/reviews.json', 'utf-8')
 const users = JSON.parse(fs.readFileSync(__dirname + '/users.json', 'utf-8'));
 
 async function deleteData() {
-  console.log('😢😢 Goodbye Data...');
+  console.log('Destroyed it ALL..on purpose.');
   await Restaurant.remove();
   await Review.remove();
   await User.remove();
@@ -29,10 +29,10 @@ async function loadData() {
     await Restaurant.insertMany(restaurants);
     await Review.insertMany(reviews);
     await User.insertMany(users);
-    console.log('👍👍👍👍👍👍👍👍 Done!');
+    console.log('Loaded all the data!');
     process.exit();
   } catch(e) {
-    console.log('\n👎👎👎👎👎👎👎👎 Error! The Error info is below but if you are importing sample data make sure to drop the existing database first with.\n\n\t npm run blowitallaway\n\n\n');
+    console.log('\n Error! The Error info is below but if you are importing sample data make sure to drop the existing database first with.\n\n\t npm run blowitallaway\n\n\n');
     console.log(e);
     process.exit();
   }

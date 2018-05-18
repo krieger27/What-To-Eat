@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const restaurantController = require('../controllers/restaurantController');
-const userController = require('../controllers/userController');
 const authController = require('../controllers/authController');
+const userController = require('../controllers/userController');
 const reviewController = require('../controllers/reviewController');
 const { catchErrors } = require('../handlers/errorHandlers');
 

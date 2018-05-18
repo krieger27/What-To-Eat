@@ -34,7 +34,6 @@
     color:$black;
     display: flex;
     padding-left: 10px;
-    clip-path: polygon(10px 0%, 100% 1%, 100% 100%, 10px 100%, 0% 50%);
     &--active {
       background: lighten($purple, 40%);
       .tag__text {

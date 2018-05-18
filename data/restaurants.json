@@ -9,14 +9,14 @@
     "tags": [
       "Wifi",
       "Open Late",
-      "Licensed"
+      "Franchise"
     ],
     "created": "2017-03-08T17:04:19.860Z",
     "location": {
-      "address": "Hamilton, ON, Canada",
+      "address": "Nashville, TN, USA",
       "coordinates": [
         -79.87110239999998,
-        43.2557206
+        36.18579
       ],
       "type": "Point"
     }
@@ -29,7 +29,7 @@
     "author": "58c039018060197ca0b52d4c",
     "photo": "0d3624fc-78ee-4297-8d15-e191b9775520.jpeg",
     "tags": [
-      "Vega"
+      "Family Friendly"
     ],
     "created": "2017-03-08T17:05:50.134Z",
     "location": {
@@ -71,8 +71,7 @@
     "tags": [
       "Wifi",
       "Open Late",
-      "Family Friendly",
-      "Licensed"
+      "Family Friendly"
     ],
     "created": "2017-03-08T17:08:37.131Z",
     "location": {
@@ -92,8 +91,8 @@
     "author": "58c039018060197ca0b52d4c",
     "photo": "9f2fc898-56b9-47fd-8a78-1d43c1377dc8.jpeg",
     "tags": [
-      "Vega",
-      "Licensed"
+      "Family Friendly",
+      "Wifi"
     ],
     "created": "2017-03-08T19:12:03.957Z",
     "location": {
@@ -114,7 +113,8 @@
     "photo": "96a33834-d7aa-4758-b980-fca901ea5956.jpeg",
     "tags": [
       "Open Late",
-      "Licensed"
+      "Family Friendly",
+      "Franchise"
     ],
     "created": "2017-03-08T19:26:39.863Z",
     "location": {
@@ -135,7 +135,7 @@
     "photo": "e3c532c9-cb77-4d92-9267-9abedeae2820.jpeg",
     "tags": [
       "Open Late",
-      "Licensed"
+      "Good Drinks"
     ],
     "created": "2017-03-08T19:28:21.738Z",
     "location": {
@@ -155,7 +155,7 @@
     "author": "58c039018060197ca0b52d4c",
     "photo": "a6b38a1d-38c3-47af-ae4c-0ab26d8edec3.jpeg",
     "tags": [
-      "Vega"
+      "Family Friendly"
     ],
     "created": "2017-03-08T19:30:21.147Z",
     "location": {
@@ -195,7 +195,7 @@
     "tags": [
       "Open Late",
       "Family Friendly",
-      "Licensed"
+      "Good Drinks"
     ],
     "created": "2017-03-08T19:46:26.122Z",
     "location": {
@@ -216,7 +216,7 @@
     "photo": "7ea7c02c-9054-442a-9126-788bf3471499.jpeg",
     "tags": [
       "Wifi",
-      "Vega"
+      "Open Late"
     ],
     "created": "2017-03-08T19:47:28.651Z",
     "location": {
@@ -237,7 +237,7 @@
     "photo": "3e143d06-a3df-4e15-86f6-4efc0a3f5fbc.jpeg",
     "tags": [
       "Open Late",
-      "Licensed"
+      "Wifi"
     ],
     "created": "2017-03-08T19:49:41.971Z",
     "location": {
@@ -258,7 +258,7 @@
     "photo": "6da53d2e-c0e0-4aef-9ec9-9513b79ece15.jpeg",
     "tags": [
       "Open Late",
-      "Licensed"
+      "Family Friendly"
     ],
     "created": "2017-03-08T19:52:09.768Z",
     "location": {
@@ -279,8 +279,8 @@
     "photo": "7628c82c-66df-493c-ba5f-9237c6bc3516.jpeg",
     "tags": [
       "Family Friendly",
-      "Vega",
-      "Licensed"
+      "Open Late",
+      "Good Drinks"
     ],
     "created": "2017-03-08T19:50:51.495Z",
     "location": {

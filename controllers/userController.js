@@ -12,16 +12,16 @@ exports.registerForm = (req, res) => {
 
 exports.validateRegister = (req, res, next) => {
   req.sanitizeBody('name');
-  req.checkBody('name', 'Please add a name!').notEmpty();
-  req.checkBody('email', 'Sorry this Email is not valid!').isEmail();
+  req.checkBody('name', 'You must supply a name!').notEmpty();
+  req.checkBody('email', 'That Email is not valid!').isEmail();
   req.sanitizeBody('email').normalizeEmail({
     gmail_remove_dots: false,
     remove_extension: false,
     gmail_remove_subaddress: false
   });
-  req.checkBody('password', 'This field can not be blank!').notEmpty();
-  req.checkBody('password-confirm', 'Confirmed password can not be blank!').notEmpty();
-  req.checkBody('password-confirm', 'Your passwords do not match').equals(req.body.password);
+  req.checkBody('password', 'Password Cannot be Blank!').notEmpty();
+  req.checkBody('password-confirm', 'Confirmed Password cannot be blank!').notEmpty();
+  req.checkBody('password-confirm', 'Oops! Your passwords do not match').equals(req.body.password);
 
   const errors = req.validationErrors();
   if (errors) {
@@ -36,7 +36,8 @@ exports.register = async (req, res, next) => {
   const user = new User({ email: req.body.email, name: req.body.name });
   const register = promisify(User.register, User);
   await register(user, req.body.password);
-  next(); 
+  // res.redirect('/login');
+  next();
 };
 
 exports.account = (req, res) => {
@@ -54,6 +55,6 @@ exports.updateAccount = async (req, res) => {
     { $set: updates },
     { new: true, runValidators: true, context: 'query' }
   );
-  req.flash('success', 'Profile has been updated!');
+  req.flash('success', 'Updated the profile!');
   res.redirect('back');
 };

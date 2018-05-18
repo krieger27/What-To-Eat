@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2vw), 0% 100%);
+    // clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2vw), 0% 100%);
     &:before {
       display: block;
       content: '';

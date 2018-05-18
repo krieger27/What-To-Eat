@@ -83,9 +83,9 @@ const confirmOwner = (restaurant, user) => {
 exports.editRestaurant = async (req, res) => {
   // 1. Find the store given the ID
   const restaurant = await Restaurant.findOne({ _id: req.params.id });
-  // 2. confirm they are the owner of the store
+  // 2. confirm owner 
   confirmOwner(restaurant, req.user);
-  // 3. Render out the edit form so the user can update their store
+  // 3. Render edit form 
   res.render('editRestaurant', { title: `Edit ${restaurant.name}`, restaurant });
 };
 
@@ -94,12 +94,11 @@ exports.updateRestaurant = async (req, res) => {
   req.body.location.type = 'Point';
   // find and update the store
   const restaurant = await Restaurant.findOneAndUpdate({ _id: req.params.id }, req.body, {
-    new: true, // return the new store instead of the old one
+    new: true, // get new store
     runValidators: true
   }).exec();
   req.flash('success', `Successfully updated <strong>${restaurant.name}</strong>. <a href="/restaurants/${restaurant.slug}">View Restaurant →</a>`);
   res.redirect(`/restaurants/${restaurant._id}/edit`);
-  // Redriect them the store and tell them it worked
 };
 
 exports.getRestaurantBySlug = async (req, res, next) => {
@@ -178,5 +177,5 @@ exports.getHearts = async (req, res) => {
 
 exports.getTopRestaurants = async (req, res) => {
   const restaurants = await Restaurant.getTopRestaurants();
-  res.render('topRestaurants', { restaurants, title:'⭐ Top Restaurants!'});
+  res.render('topRestaurants', { restaurants, title:'Top Restaurants!'});
 }

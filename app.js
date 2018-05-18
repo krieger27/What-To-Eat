@@ -12,9 +12,12 @@ const expressValidator = require('express-validator');
 const routes = require('./routes/index');
 const helpers = require('./helpers');
 const errorHandlers = require('./handlers/errorHandlers');
+require('./handlers/passport');
 
 const app = express();
 
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.set('views', path.join(__dirname, 'views')); 
 app.set('view engine', 'pug');
@@ -35,9 +38,6 @@ app.use(session({
   saveUninitialized: false,
   store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
-
-app.use(passport.initialize());
-app.use(passport.session());
 
 app.use(flash());
 

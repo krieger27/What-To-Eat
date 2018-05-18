@@ -1,4 +1,6 @@
 const passport = require('passport');
+const passportLocalMongoose = require('passport-local-mongoose');
+const localStrategy = require('passport-local').Strategy;
 const crypto = require('crypto');
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
@@ -7,10 +9,18 @@ const mail = require('../handlers/mail');
 
 exports.login = passport.authenticate('local', {
   failureRedirect: '/login',
-  failureFlash: 'Failed to Login!',
+  failureFlash: 'Failed Login!',
   successRedirect: '/',
-  successFlash: 'You are logged in!'
+  successFlash: 'You are now logged in!'
 });
+
+// exports.login = (req, res) => {
+//   const user = User.findOne({ email: req.body.email });
+//   req.login(user);
+//   req.session.user = user;
+//   console.log(req.isAuthenticated());
+//   res.redirect('/');
+// };
 
 exports.logout = (req, res) => {
   req.logout();
@@ -19,25 +29,27 @@ exports.logout = (req, res) => {
 };
 
 exports.isLoggedIn = (req, res, next) => {
-  // checking to see if the user is authenticated
+  // first check if the user is authenticated
   if (req.isAuthenticated()) {
-    next();
+    next(); 
     return;
   }
-  req.flash('error', 'Sorry you must be logged in to do that!');
+  req.flash('error', 'Sorry, please log in to do that!');
   res.redirect('/login');
 };
 
 exports.forgot = async (req, res) => {
+  // 1. See if a user with that email exists
   const user = await User.findOne({ email: req.body.email });
   if (!user) {
     req.flash('error', 'No account with that email exists.');
     return res.redirect('/login');
   }
+  
   user.resetPasswordToken = crypto.randomBytes(20).toString('hex');
   user.resetPasswordExpires = Date.now() + 3600000; // 1 hour from now
   await user.save();
-  
+  // 3. Send them an email with the token
   const resetURL = `http://${req.headers.host}/account/reset/${user.resetPasswordToken}`;
   await mail.send({
     user,
@@ -46,6 +58,7 @@ exports.forgot = async (req, res) => {
     resetURL
   });
   req.flash('success', `You have been emailed a password reset link.`);
+  // 4. redirect to login page
   res.redirect('/login');
 };
 
@@ -58,7 +71,7 @@ exports.reset = async (req, res) => {
     req.flash('error', 'Password reset is invalid or has expired');
     return res.redirect('/login');
   }
-  // if user exists, go to rest password form
+
   res.render('reset', { title: 'Reset your Password' });
 };
 
@@ -78,7 +91,7 @@ exports.update = async (req, res) => {
   });
 
   if (!user) {
-    req.flash('error', 'Password reset is invalid');
+    req.flash('error', 'Password reset is invalid or has expired');
     return res.redirect('/login');
   }
 
