@@ -8,7 +8,9 @@ mongoose.connection.on('error', (err) => {
   console.error(`this isn't working → ${err.message}`);
 });
 
-require('./models/Restuarant');
+require('./models/Restaurant');
+require('./models/User');
+require('./models/Review');
 
 const app = require('./app');
 app.set('port', process.env.PORT || 7777);

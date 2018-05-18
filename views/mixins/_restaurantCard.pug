@@ -1,0 +1,25 @@
+mixin restaurantCard(restaurant = {})
+  .restaurant
+    .restaurant__hero
+      .restaurant__actions
+        if user
+          .restaurant__action.restaurant__action--heart
+            form.heart(method="POST" action=`/api/restaurants/${store._id}/heart`)
+              - const heartStrings = user.hearts.map(obj => obj.toString())
+              - const heartClass = heartStrings.includes(store._id.toString()) ? 'heart__button--hearted' : ''
+              button.heart__button(type="submit" name="heart" class=heartClass)
+                != h.icon('heart')
+        if user && restaurant.author.equals(user._id)
+          .restaurant__action.restaurant__action--edit
+            a(href=`/restaurants/${restaurant._id}/edit`)
+              != h.icon('pencil')
+        if restaurant.reviews
+          .restaurant__action.restaurant__action--count
+            != h.icon('review')
+            span= restaurant.reviews.length
+
+      img(src=`/uploads/${restaurant.photo || 'restaurant.png'}`)
+      h2.title
+        a(href=`/restaurant/${restaurant.slug}`) #{restaurant.name}
+    .restaurant__details
+      p= restaurant.description.split(' ').slice(0, 25).join(' ')
